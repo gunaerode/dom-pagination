@@ -71,7 +71,7 @@ function createPagination(data) {
   previous.addEventListener("click", () => {
     let temp = sessionStorage.getItem("page");
     temp = temp - 1 || 1;
-    createTableData(data, parseInt(temp));
+    temp >= 1 ? createTableData(data, parseInt(temp)) : null;
   });
   first.addEventListener("click", () => createTableData(data, 1));
   for (let key = 0; key < totalPages; key++) {
